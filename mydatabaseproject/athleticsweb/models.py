@@ -4,7 +4,7 @@ from django.db import models
 
 class t1_houseinfo(models.Model):
     id = models.AutoField(primary_key=True)
-    HouseId = models.CharField(max_length=5)
+    HouseId = models.IntegerField()
     HouseEstd = models.IntegerField()
     HouseName = models.CharField(max_length=100)
     HouseNameAlt = models.CharField(max_length=100)
@@ -12,11 +12,11 @@ class t1_houseinfo(models.Model):
     Location = models.CharField(max_length=100)
     Building = models.CharField(max_length=100)
     Phone = models.CharField(max_length=20)
-    Email = models.CharField(max_length=100)
+    Email = models.EmailField()
 
 class t1_houseinfoalt(models.Model):
-    HID_id = models.AutoField(primary_key=True)
+    HID_id = models.OneToOneField(t1_houseinfo, on_delete=models.CASCADE, primary_key=True)
     HouseName = models.CharField(max_length=100)
-    AltPhone = models.CharField(max_length=100)
-    AltEmail = models.CharField(max_length=100)
+    AltPhone = models.CharField(max_length=20, null=True, blank=True)
+    AltEmail = models.EmailField(null=True, blank=True)
     

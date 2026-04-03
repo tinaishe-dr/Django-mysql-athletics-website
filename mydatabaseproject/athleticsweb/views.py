@@ -8,4 +8,4 @@ def index(request):
     # fetch all house information from the database
     houses = t1_houseinfo.objects.all()
     # render the index.html template with the house information
-    return render(request, 'home.html')
+    return render(request, 'home.html', {'houses': houses})

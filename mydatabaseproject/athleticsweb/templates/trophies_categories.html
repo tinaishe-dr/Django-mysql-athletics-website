@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trophies and Categories</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'athleticsweb/style.css' %}">
+</head>
+<body>
+    <h1 id="SchName">LOWELL FINCH ACADEMY</h1>
+    <h1 id="SchMotto">SAPIENTIA ET VERITAS</h1>
+    <br style="size: 10px;">
+<div class="house-info">
+   <ul>
+    <li><a href="{% url 'facilities_schedule' %}">Visit the Facilities and Schedule page</a></li>
+    <li><a href="{% url 'home' %}">Go back to MAIN PAGE</a></li>
+   </ul>
+</div>
+<footer>
+    <p id="footer-text">CONTACT US: Email:admissions@lowellfinch.edu || Phone: 324-2323 || Address: 100 Finch Avenue, Petersberg, 14587, UK</p>
+</footer>
+</body>
+</html>

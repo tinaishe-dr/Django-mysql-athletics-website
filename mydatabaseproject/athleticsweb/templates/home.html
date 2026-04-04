@@ -2,11 +2,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Athletics Web</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'athleticsweb/static/style.css' %}">
+    <title>House Info Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'athleticsweb/style.css' %}">
 </head>
 <body>
-    <h1>Athletics Web</h1>
-    <p>Welcome to the Athletics Web!</p>
+    <h1 id="SchName">LOWELL FINCH ACADEMY</h1>
+    <h1 id="SchMotto">SAPIENTIA ET VERITAS</h1>
+    <br style="size: 10px;">
+    <h2>History</h2>
+    <br>
+    <p id="SchHist">Our school Lowell and Finch Academy was founded in the year 1980 by the missionaries in London, UK. The school motto SAPIENTIA ET VERITAS,
+meaning wisdom and truth, has been the legacy among our students across generations. This website documents the athletic participation of the
+four houses of our school. Initially, our school had only two houses which are Lotus and Rose, when the population of the school was very less.
+With the growth of our school over the years and the growth of the city, we have four houses which are - Lotus, Rose, Lavender, and Daffodil.
+Lotus and Rose houses were founded in the year 1985, followed by the Lavender and Daffodil houses which were founded in the years 1900 and
+1901 respectively. Our houses are identified with their unique colors which are Green for the Lotus house, Red for the Rose house, Blue for the
+Lavender house, and Gold for the Daffodil house. Each house is led by their house captains and vice captains. Our school hold votings to elect the
+captains and vice captains who serve as house leaders for a year. We aim to teach responsibility, discipline, and leadership skills to our students.
+We firmly believe that athletic skills are a strong foundations that would build our students' inner strength and would prepare them to thrive in
+the real world as they move forward in their future.</p>
+
+<div class="house-info">
+   <ul>
+    <li><a href="{% url 'house_leaders' %}">Visit the House Leaders page</a></li>
+    <li><a href="{% url 'trophies_categories' %}">Visit the Trophies and Categories page</a></li>
+    <li><a href="{% url 'facilities_schedule' %}">Visit the Facilities and Schedule page</a></li>
+    <li><a href="{% url 'query' %}">Visit the Query page</a></li>
+   </ul>
+</div>
+<footer>
+    <p id="footer-text">CONTACT US: Email:admissions@lowellfinch.edu || Phone: 324-2323 || Address: 100 Finch Avenue, Petersberg, 14587, UK</p>
+</footer>
+
 </body>
 </html>

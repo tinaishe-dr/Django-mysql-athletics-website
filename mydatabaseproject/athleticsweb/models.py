@@ -15,7 +15,7 @@ class t1_houseinfo(models.Model):
     Email = models.EmailField()
 
 class t1_houseinfoalt(models.Model):
-    HID_id = models.OneToOneField(t1_houseinfo, on_delete=models.CASCADE, primary_key=True)
+    HID_id = models.OneToOneField(t1_houseinfo, on_delete=models.CASCADE, db_column='HID_id', primary_key=True)
     HouseName = models.CharField(max_length=100)
     AltPhone = models.CharField(max_length=100, null=True, blank=True)
     AltEmail = models.EmailField(null=True, blank=True)

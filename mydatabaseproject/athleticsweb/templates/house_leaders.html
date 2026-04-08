@@ -11,6 +11,58 @@
     <br style="size: 10px;">
     <img src="{% static 'athleticsweb/website_images/school_nobg_logo.png' %}" class="right-img" alt="School Logo" style="display: block; width: 30%; height: auto; float: right;">
 
+<h2 style="justify-content: center; padding-left: 23%;">Meet our House Captains</h2>
+<br style="size: 2px;">
+
+<img src="{% static 'athleticsweb/website_images/HouseCaptains.png' %}" alt="House Captains" style="height: auto; width: 40%; display: block; margin: 0 auto;">
+<br style="size: 2px;">
+<h2 style="justify-content: center; padding-left: 38%;">Meet our House Vice Captains</h2>
+<br style="size: 2px;">
+
+<img src="{% static 'athleticsweb/website_images/HouseVCaptains.png' %}" alt="House Vice Captains" style="height: auto; width: 40%; display: block; margin: 0 auto;">
+<br style="size: 2px;">
+
+<h2 style="justify-content: center; padding-left: 38%;">Our Active House Leaders</h2>
+<br style="size: 2px;">
+
+<table border="1" style="margin: 0 auto;">
+    <thead> 
+        <tr>
+            <th style="color: white;">HID_id</th>
+            <th style="color: white;">House Name</th>
+            <th style="color: white;">HCapID</th>
+            <th style="color: white;">HouseCaptain</th>
+            <th style="color: white;">HouseCaptainGrade</th>
+            <th style="color: white;">HVCapID</th>
+            <th style="color: white;">HouseViceCaptain</th>
+            <th style="color: white;">HouseViceCaptainGrade</th>
+            <th style="color: white;">CaptaincyTermStart</th>
+            <th style="color: white;">CaptaincyTermEnd</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for house in house_leaders %}
+        <tr>
+            <td style="color: white;">{{ house.HID_id_id }}</td>
+            <td style="color: white;">{{ house.HouseName }}</td>
+            <td style="color: white;">{{ house.HCapID }}</td>
+            <td style="color: white;">{{ house.HouseCaptain }}</td>
+            <td style="color: white;">{{ house.HouseCaptainGrade }}</td>
+            <td style="color: white;">{{ house.HVCapID }}</td>
+            <td style="color: white;">{{ house.HouseViceCaptain }}</td>
+            <td style="color: white;">{{ house.HouseViceCaptainGrade }}</td>
+            <td style="color: white;">{{ house.CaptaincyTermStart }}</td>  
+            <td style="color: white;">{{ house.CaptaincyTermEnd }}</td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br style="size: 10px;">
+
+<img src="{% static 'athleticsweb/website_images/school_crest.jpeg' %}" alt="School Crest" style="height: auto; width: 30%; display: block; margin: 0 auto;">
+
+
 <div style="justify-content: center;">
    <ul style="list-style-type: none; padding: 10px; background-color: yellowgreen; justify-content: center;">
     <li><a href="{% url 'trophies_categories' %}">Visit the Trophies and Categories page</a></li>

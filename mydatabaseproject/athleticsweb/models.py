@@ -19,4 +19,15 @@ class t1_houseinfoalt(models.Model):
     HouseName = models.CharField(max_length=100)
     AltPhone = models.CharField(max_length=100, null=True, blank=True)
     AltEmail = models.EmailField(null=True, blank=True)
-    
+
+class t1_houseleaders(models.Model):
+    HID_id = models.OneToOneField(t1_houseinfo, on_delete=models.CASCADE, db_column='HID_id', primary_key=True)
+    HouseName = models.CharField(max_length=100)
+    HCapID = models.CharField(max_length=100)
+    HouseCaptain = models.CharField(max_length=100)
+    HouseCaptainGrade = models.IntegerField()
+    HVCapID = models.CharField(max_length=100)
+    HouseViceCaptain = models.CharField(max_length=100)
+    HouseViceCaptainGrade = models.IntegerField()
+    CaptaincyTermStart = models.PositiveIntegerField()
+    CaptaincyTermEnd = models.PositiveIntegerField()

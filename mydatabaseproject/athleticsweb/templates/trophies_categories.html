@@ -11,6 +11,110 @@
     <br style="size: 10px;">
     <img src="{% static 'athleticsweb/website_images/school_nobg_logo.png' %}" class="right-img" alt="School Logo" style="display: block; width: 30%; height: auto; float: right;">
 
+<h2>OUR Sports Categories</h2>
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>Category ID</th>
+        <th>Category Name</th>
+        <th>GradeRangeJunior</th>
+        <th>GradeRangeSenior</th>
+    </tr>
+    {% for category in categories %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ category.CategoryId }}</td>
+        <td>{{ category.CategoryName }}</td>
+        <td>{{ category.GradeRangeJunior }}</td>
+        <td>{{ category.GradeRangeSenior }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br style="size: 10px;">
+<h2>Current Category Incharge and Leaders</h2>
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>InchargeGreen</th>
+        <th>InchargePink</th>
+        <th>InchargeBlue</th>
+        <th>InchargeGold</th>
+        <th>FacultyIncharge</th>
+        <th>ID_id</th>
+    </tr>
+    {% for incharge in incharge %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ incharge.InChargeGreen }}</td>
+        <td>{{ incharge.InchargePink }}</td>
+        <td>{{ incharge.InchargeBlue }}</td>
+        <td>{{ incharge.InchargeGold }}</td>
+        <td>{{ incharge.FacultyIncharge }}</td>
+        <td>{{ incharge.ID_id_id }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br style="size: 10px;">
+
+<h2 style="justify-content: center; padding-left: 40%;">Group Photo 2025-2026</h2>
+<img src="{% static 'athleticsweb/website_images/group_merged.jpeg' %}" alt="Group Photo" style="height: auto; width: 70%; display: block; margin: 0 auto;">
+
+<br style="size: 10px;">
+
+<h2 style="padding-left: 45%;">Our Trophies</h2>
+
+<table border="1" style="margin: 0 auto;">
+    <tr>
+        <th>id</th>
+        <th>Trophy</th>
+    </tr>
+    {% for trophy in trophies %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ trophy.Trophy }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2 style="justify-content: center; padding-left: 35%;">Champions List for the past 2 Years</h2>
+
+<table border="1" style="margin: 0 auto;">
+    <tr>
+        <th>id</th>
+        <th>HouseName</th>
+        <th>HouseNameAlt</th>
+    </tr>
+    {% for champion in hidinfos %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ champion.HouseName }}</td>
+        <td>{{ champion.HouseNameAlt }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2 style="justify-content: center; padding-left: 35%;">Trophy Winners for the Past 2 Years</h2>
+
+<table border="1" style="margin: 0 auto;">
+    <tr>
+        <th>id</th>
+        <th>HID_info_id</th>
+        <th>Trophies_id</th>
+    </tr>
+    {% for info in trophiesinfo %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ info.hidinfo_id }}</td>
+        <td>{{ info.trophy_id }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br style="size: 10px;">
+
+<img src="{% static 'athleticsweb/website_images/school_crest.jpeg' %}" alt="School Crest" style="height: auto; width: 30%; display: block; margin: 0 auto;">
+
 <div style="justify-content: center;">
    <ul style="list-style-type: none; padding: 10px; background-color: yellowgreen; justify-content: center;">
     <li><a href="{% url 'facilities_schedule' %}">Visit the Facilities and Schedule page</a></li>

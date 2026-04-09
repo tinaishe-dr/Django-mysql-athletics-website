@@ -1,7 +1,11 @@
 from django.contrib import admin
-from .models import t1_houseinfo, t1_houseinfoalt, t1_houseleaders
+from .models import HIDinfo, HouseInfo, HouseInfoAlt, HouseLeader, SportsCategory, CategoryIncharge, Trophy
 
 # Register your models here.
-admin.site.register(t1_houseinfo)
-admin.site.register(t1_houseinfoalt)
-admin.site.register(t1_houseleaders)
+admin.site.register(HouseInfo)
+admin.site.register(HouseInfoAlt)
+admin.site.register(HouseLeader)
+admin.site.register(SportsCategory)
+admin.site.register(CategoryIncharge)
+admin.site.register(Trophy)
+admin.site.register(HIDinfo)

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Trophy, HouseInfo, HouseInfoAlt, HouseLeader, SportsCategory, CategoryIncharge, HIDinfo
+from .models import PracticeSchedule, SportsFacility, Trophy, HouseInfo, HouseInfoAlt, HouseLeader, SportsCategory, CategoryIncharge, HIDinfo
 
 # Create your views here.
 
@@ -23,7 +23,9 @@ def trophies_categories(request):
     return render(request, 'trophies_categories.html', {'trophies': trophies, 'categories': categories, 'incharge': incharge, 'hidinfos': hidinfos, 'trophiesinfo': trophiesinfo})
 
 def facilities_schedule(request):
-    return render(request, 'facilities_schedule.html')
+    facilities = SportsFacility.objects.all()
+    schedule = PracticeSchedule.objects.all()
+    return render(request, 'facilities_schedule.html', {'facilities': facilities, 'schedule': schedule})
 
 def query(request):
     return render(request, 'query.html')

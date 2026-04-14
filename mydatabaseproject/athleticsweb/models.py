@@ -57,3 +57,23 @@ class HIDinfo(models.Model):
     HouseName = models.CharField(max_length=100)
     HouseNameAlt = models.CharField(max_length=100)
     trophies = models.ManyToManyField(Trophy, related_name='houses')
+
+class SportsFacility(models.Model):
+
+    LOCATION_CHOICES = [
+        ('CampusPool', 'CampusPool'),
+        ('BasketBallCourt', 'BasketBallCourt'),
+        ('BackCompound', 'BackCompound'),
+        ('TennisCourt', 'TennisCourt'),
+        ('VolleyBallCourt', 'VolleyBallCourt'),
+    ]
+
+    id = models.AutoField(primary_key=True)
+    CategoryName = models.CharField(max_length=100)
+    Location = models.CharField(max_length=100, choices=LOCATION_CHOICES)
+
+class PracticeSchedule(models.Model):
+    id = models.AutoField(primary_key=True)
+    ScheduleDate = models.DateField()
+    ScheduleTime = models.TimeField()
+    categoryName_id = models.ForeignKey(SportsFacility, on_delete=models.CASCADE, db_column='categoryName_id')

@@ -11,7 +11,44 @@
     <br style="size: 10px;">
     <img src="{% static 'athleticsweb/website_images/school_nobg_logo.png' %}" class="right-img" alt="School Logo" style="display: block; width: 30%; height: auto; float: right;">
 
+<h2 style="text-align: center;">Our Sports Facilities</h2>
+<table border="1" style="margin: 0 auto;">
+    <tr>
+        <th>id</th>
+        <th>Category Name</th>
+        <th>Location</th>
+    </tr>
+    {% for facility in facilities %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ facility.CategoryName }}</td>
+        <td>{{ facility.Location }}</td>
+    </tr>
+    {% endfor %}
+</table>
 
+<h2 style="text-align: center;">Current Practice Schedule</h2>
+<table border="1" style="margin: 0 auto;">
+    <tr>
+        <th>id</th>
+        <th>ScheduleDate</th>
+        <th>ScheduleTime</th>
+        <th>categoryName_id</th>
+    </tr>
+    {% for schedule in schedule %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ schedule.ScheduleDate }}</td>
+        <td>{{ schedule.ScheduleTime }}</td>
+        <td>{{ schedule.categoryName_id_id }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+<h2 style="text-align: center;">Glimpse of OUR Sports Facilities</h2>
+<img src="{% static 'athleticsweb/website_images/facil_merged.png' %}" alt="Sports Facilities Photo" style="height: auto; width: 70%; display: block; margin: 0 auto;">
+<br style="size: 10px;">
 <img src="{% static 'athleticsweb/website_images/school_crest.jpeg' %}" alt="School Crest" style="height: auto; width: 30%; display: block; margin: 0 auto;">
 
     <div style="justify-content: center;">

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import PracticeSchedule, SportsFacility, Trophy, HouseInfo, HouseInfoAlt, HouseLeader, SportsCategory, CategoryIncharge, HIDinfo
+from .models import PracticeSchedule, Query, SportsFacility, Trophy, HouseInfo, HouseInfoAlt, HouseLeader, SportsCategory, CategoryIncharge, HIDinfo
 
 # Create your views here.
 
@@ -28,4 +28,9 @@ def facilities_schedule(request):
     return render(request, 'facilities_schedule.html', {'facilities': facilities, 'schedule': schedule})
 
 def query(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        if email:
+            Query.objects.create(email=email)
+        return render(request, 'message.html', {'email': email})
     return render(request, 'query.html')

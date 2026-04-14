@@ -77,3 +77,7 @@ class PracticeSchedule(models.Model):
     ScheduleDate = models.DateField()
     ScheduleTime = models.TimeField()
     categoryName_id = models.ForeignKey(SportsFacility, on_delete=models.CASCADE, db_column='categoryName_id')
+
+class Query(models.Model):
+    id = models.AutoField(primary_key=True)
+    email = models.EmailField()
